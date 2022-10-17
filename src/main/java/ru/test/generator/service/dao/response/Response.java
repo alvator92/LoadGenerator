@@ -1,8 +1,11 @@
 package ru.test.generator.service.dao.response;
 
+import lombok.Getter;
+
 import java.sql.Timestamp;
 import java.util.Date;
 
+@Getter
 public class Response {
 
     public Response() {
@@ -52,5 +55,18 @@ public class Response {
         public Response build() {
             return response;
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Response{" +
+                "id=" + id +
+                ", status=" + status +
+                ", oper_code='" + oper_code + '\'' +
+                ", oper_name='" + oper_name + '\'' +
+                ", personal_id='" + personal_id + '\'' +
+                ", owner_id='" + owner_id + '\'' +
+                ", reg_time=" + reg_time +
+                '}';
     }
 }

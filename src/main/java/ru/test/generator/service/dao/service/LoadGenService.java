@@ -1,5 +1,6 @@
 package ru.test.generator.service.dao.service;
 
+import org.springframework.transaction.annotation.Transactional;
 import ru.test.generator.service.dao.model.LoadGenTable;
 
 /**
@@ -10,6 +11,7 @@ import ru.test.generator.service.dao.model.LoadGenTable;
  */
 public interface LoadGenService {
 
+    @Transactional
     void save(LoadGenTable user);
 
 }
