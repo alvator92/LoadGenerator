@@ -13,17 +13,17 @@ databaseChangeLog:
                   name: id
                   type: INT
               - column:
-                  name: code
-                  type: VARCHAR(255)
-              - column:
                   constraints:
                     nullable: false
                   name: status
                   type: INT
               - column:
+                  name: oper_code
+                  type: VARCHAR(255)
+              - column:
                   constraints:
                     nullable: false
-                  name: operName
+                  name: oper_name
                   type: VARCHAR(255)
               - column:
                   constraints:
@@ -33,7 +33,7 @@ databaseChangeLog:
               - column:
                   constraints:
                     nullable: false
-                  name: owner
+                  name: owner_id
                   type: VARCHAR(255)
               - column:
                   constraints:
