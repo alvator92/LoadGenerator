@@ -1,10 +1,11 @@
 package ru.test.generator.service.dao.response;
 
 import lombok.Getter;
-
-import java.sql.Timestamp;
 import java.util.Date;
 
+/**
+ * Class Builder for {@link ru.test.generator.service.dao.model.LoadGenTable}
+ */
 @Getter
 public class Response {
 

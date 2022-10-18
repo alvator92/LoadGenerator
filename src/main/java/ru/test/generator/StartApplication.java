@@ -4,8 +4,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
-import ru.test.generator.service.dao.response.Response;
 
+/**
+ * Main class
+ */
 @Slf4j
 @SpringBootApplication
 public class StartApplication {

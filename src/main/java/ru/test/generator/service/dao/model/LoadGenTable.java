@@ -7,6 +7,13 @@ import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.*;
 import java.util.Date;
 
+/**
+ * Class Entity
+ *
+ * @author Vladislav K.
+ * @version 1.0
+ */
+
 @Entity
 @Table(name = "load_gen_service")
 @Data

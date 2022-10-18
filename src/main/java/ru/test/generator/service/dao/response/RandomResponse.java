@@ -7,6 +7,13 @@ import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * Class prepare response {@link ru.test.generator.controller.ClientController}(Example)
+ *
+ * @author Vladislav K.
+ * @version 1.0
+ */
+
 @Service
 public class RandomResponse {
 

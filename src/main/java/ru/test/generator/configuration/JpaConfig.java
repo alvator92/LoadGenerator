@@ -6,6 +6,13 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import ru.test.generator.service.dao.service.LoadGenService;
 import ru.test.generator.service.dao.service.LoadGenServiceImpl;
 
+/**
+ * Class for {@link LoadGenService}
+ *
+ * @author Vladislav K.
+ * @version 1.0
+ */
+
 @Configuration
 @EnableJpaRepositories( basePackages = {"ru.test.generator.service.dao.repository"},
         entityManagerFactoryRef = "apossEntityManager",

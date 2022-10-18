@@ -14,11 +14,10 @@ import ru.test.generator.service.dao.response.RandomResponse;
 import ru.test.generator.service.dao.response.RespController;
 import ru.test.generator.service.dao.response.Response;
 
-import java.util.Date;
 import java.util.List;
 
 /**
- * RestController class for work with DAO
+ * RestController class for working with DAO
  *
  * @author Vladislav K.
  * @version 1.0
@@ -37,14 +36,23 @@ public class ClientController {
     @ResponseBody
     public String welcome() {return "Welcome to loadGen test app. Enjoy it!";}
 
+    /**
+     * RestController for working with DAO
+     */
     @RequestMapping(value = "/{operName}/{num}")
     ResponseEntity<String> Response(@PathVariable String operName,
                                     @PathVariable int num) {
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.add("Content-type","application/json; charset=utf-8");
 
-        List<Response> list = RandomResponse.getResponse(operName, num);
+        // Формирование ответа и отправка в БД
+        sendFileToDB(RandomResponse.getResponse(operName, num));
 
+        return new ResponseEntity<>("HttpStatus.OK",httpHeaders,HttpStatus.OK);
+    }
+
+    // Проходимся по списку вытаскиеваем параметры и отправляем в бд
+    private void sendFileToDB(List<Response> list) {
         for (Response br : list) {
             LoadGenTable loadGenTable = new LoadGenTable();
             loadGenTable.setStatus(br.getStatus());
@@ -55,7 +63,5 @@ public class ClientController {
             loadGenTable.setReg_time(br.getReg_time());
             respController.sendClientToDB(loadGenTable);
         }
-
-        return new ResponseEntity<>("1",httpHeaders,HttpStatus.OK);
     }
 }
